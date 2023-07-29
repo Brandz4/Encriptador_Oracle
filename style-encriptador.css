@@ -1,0 +1,133 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: rgb(230, 235, 251);
+}
+
+.rectanguloEncriptador{
+  width: 400px; 
+  height: 825px; 
+  background-color: white;
+  position: fixed;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 35px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.imagen-rect{
+    margin-top: 35px;
+    margin-left: 30px;
+}
+
+.TxtNot{
+    text-align: center;
+    padding-top: 20px;
+    font-size: 25px;
+    font-family: "Rockwell", sans-serif;
+}
+
+.TxtIngMsg{
+    text-align: center;
+    font-size: 15px;
+    color: gray;
+    font-family: "Rockwell", sans-serif;
+}
+
+.Encriptar{
+  width: 300px; 
+  height: 75px; 
+  background-color: rgb(110, 91, 193);
+  margin: 750px 0px 0px 175px;
+  transform: translateY(-50%);
+  border-radius: 35px; 
+  transition: 1s all;
+  cursor: pointer;
+  box-shadow: 0 0 0 2px #000000;
+  text-align: center;  
+}
+
+.Encriptar:hover{
+    background: rgb(88, 65, 191);  
+    box-shadow: 0 0 0 4px #000000;  
+}
+
+.Encriptar p{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px; 
+    font-family: "Rockwell", sans-serif;
+    color: white;
+}
+
+.DesEncriptar{
+    width: 300px; 
+    height: 75px; 
+    background-color: rgb(174, 173, 176);
+    position: absolute;
+    margin: 10px 0px 0px 500px;    
+    transform: translateY(-163%);
+    border-radius: 35px; 
+    transition: 1s all;
+    cursor: pointer;
+    box-shadow: 0 0 0 2px #000000; 
+    text-align: center;
+}
+
+.DesEncriptar:hover{
+    background: rgb(126, 125, 127);  
+    box-shadow: 0 0 0 4px #000000;  
+}
+
+.DesEncriptar p{
+    position: relative;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px; 
+    color: white;
+    font-family: "Rockwell", sans-serif;
+}
+
+.textoIngTxt {
+    position: fixed;
+    top: 100px;
+    left: 225px;
+    transform: translateY(-50%);
+    font-size: 30px; 
+    color: rgb(3, 88, 179); 
+    font-family: "Rockwell", sans-serif;
+  }
+
+  .textoWarning{
+    position: fixed;
+    top: 150px;
+    left: 235px;
+    transform: translateY(-50%);
+    font-size: 15px; 
+    color: rgb(93, 93, 93); 
+    font-family: "Rockwell", sans-serif;
+  }
+
+form.form-textarea{
+    margin: -600px 0px 0px 175px;    
+}
+
+.input-padron{
+    display: block;
+    margin: 0 0 20px;
+    padding: 10px 25px;
+    width: 47%;
+    font-family: "Rockwell", sans-serif;
+    font-size: 20px;
+    resize: none;
+    color: rgb(99, 99, 201);
+    background-color: transparent;
+    border: 2px solid black;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+}
+
+

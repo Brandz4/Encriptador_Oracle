@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <title>Encriptador de Textos</title>
+    <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style-encriptador.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="rectanguloEncriptador">
+        <img src="Muñeco.png" class="imagen-rect" alt="Imagen del muñeco">
+        <p class="TxtNot">Ningún mensaje fue <br> encontrado</p>
+        <p class="TxtIngMsg">Ingrese el texto que desees encriptar o <br> desencriptar.</p>
+    </div>
+    <p class="textoIngTxt">Ingrese el texto en el siguiente espacio:</p>
+    <p class="textoWarning">Solo letras minúsculas y sin acentos*</p>        
+
+    <div class="Encriptar">
+        <p>Encriptar</p>
+    </div>
+
+    <div class="DesEncriptar">
+        <p>Desencriptar</p>
+    </div>
+
+    <form class="form-textarea">
+        <textarea id="TxtField" class="input-padron" rows="16" 
+        placeholder="Escribe aquí..."></textarea>
+    </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const encriptarBtn = document.querySelector('.Encriptar');
+            const desencriptarBtn = document.querySelector('.DesEncriptar');
+            const textoEncriptar = document.getElementById('TxtField');
+            const rectanguloEncriptador = document.querySelector('.rectanguloEncriptador');
+            const textoPredeterminado = 'Ningún mensaje fue <br> encontrado';
+
+            encriptarBtn.addEventListener('click', function () {
+                const textoOriginal = textoEncriptar.value;
+                const textoEncriptado = encriptarTexto(textoOriginal);
+
+                const nuevoParrafo = document.createElement('p');
+                nuevoParrafo.classList.add('TxtNot');
+                nuevoParrafo.innerHTML = textoEncriptado ? textoEncriptado : textoPredeterminado;
+
+                while (rectanguloEncriptador.firstChild) {
+                    rectanguloEncriptador.removeChild(rectanguloEncriptador.firstChild);
+                }
+                rectanguloEncriptador.appendChild(nuevoParrafo);
+            });
+
+            desencriptarBtn.addEventListener('click', function () {
+                const textoEncriptado = textoEncriptar.value;
+                const textoDesencriptado = desencriptarTexto(textoEncriptado);
+
+                const nuevoParrafo = document.createElement('p');
+                nuevoParrafo.classList.add('TxtNot');
+                nuevoParrafo.innerHTML = textoDesencriptado ? textoDesencriptado : textoPredeterminado;
+
+                while (rectanguloEncriptador.firstChild) {
+                    rectanguloEncriptador.removeChild(rectanguloEncriptador.firstChild);
+                }
+                rectanguloEncriptador.appendChild(nuevoParrafo);
+            });
+
+            function encriptarTexto(texto) {
+                if (!texto) return ''; 
+
+                const encriptado = texto
+                    .replace(/e/g, 'enter')
+                    .replace(/i/g, 'imes')
+                    .replace(/a/g, 'ai')
+                    .replace(/o/g, 'ober')
+                    .replace(/u/g, 'ufat');
+
+                return encriptado;
+            }
+
+            function desencriptarTexto(textoEncriptado) {
+                const desencriptado = textoEncriptado
+                    .replace(/ufat/g, 'u')
+                    .replace(/ober/g, 'o')
+                    .replace(/ai/g, 'a')
+                    .replace(/imes/g, 'i')
+                    .replace(/enter/g, 'e');
+
+                return desencriptado;
+            }
+        });
+    </script>
+</body>
+</html>
